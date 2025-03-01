@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -71,6 +72,33 @@ public class Test_Example extends TestBase{
 
         // Use Locator Absolute Xpath ( Full Xpath ) also can use xpath shot one
         // driver.findElement(By.xpath("/html/body/div[3]/div[1]/div[5]/form/table[4]/tbody/tr[3]/td[2]/input[4]")).click();
+
+
+//radio button gender
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div[5]/form/table[1]/tbody/tr[2]/td[2]/label[2]/span")).click();
+//End radio button gender
+
+
+        // Dropdown //
+
+        // Locate the dropdown element
+        WebElement dropdownElement = driver.findElement(By.id("cactivity"));
+
+        // Use Select class to interact with the dropdown
+        Select dropdown = new Select(dropdownElement);
+
+        // Select by value
+        dropdown.selectByValue("1.55");  // Selects "Active: daily exercise or intense exercise 3-4 times/week"
+
+        // OR Select by visible text
+        // dropdown.selectByVisibleText("Active: daily exercise or intense exercise 3-4 times/week");
+
+        // OR Select by index (0-based)
+        // dropdown.selectByIndex(4);  // Selects the 5th option
+
+// End Dropdown //
+
+
 
 
     }
